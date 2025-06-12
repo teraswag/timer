@@ -1,0 +1,294 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono");
+@import url("https://fonts.googleapis.com/css?family=Noto+Serif");
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@import url("https://fonts.googleapis.com/css?family=Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Nabla");
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Pirata+One");
+@import url("https://fonts.googleapis.com/css?family=Alumni+Sans+Pinstripe");
+:root {
+  --bg: #000;
+  --fg: #fff;
+  --md: #ccc;
+  --ds: #5a5a5a;
+  --wr: #f00;
+  --fnt: "Lato", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--fnt);
+  color: var(--fg);
+  overflow: clip;
+  text-align: center;
+  transition: 1s;
+}
+body {
+  background: var(--bg);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;
+  transform: scale(2);
+}
+input,
+button {
+  outline: 0;
+  border: 1px solid var(--fg);
+  background: transparent;
+  padding: 1vh;
+}
+
+/* HIDES NUMBER UP DOWN THINGS */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+/**/
+h1 {
+  font-size: 36pt;
+  line-height: 36pt;
+}
+.timer {
+  font-size: 24pt;
+}
+button {
+  cursor: pointer;
+  transition: 0.1s;
+}
+input,
+h1 {
+  margin-bottom: 2vh;
+}
+button:disabled {
+  border: 1px solid var(--ds);
+  color: var(--ds);
+  cursor: default;
+}
+.popup {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  transform: scale(2);
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3vh);
+}
+.inna {
+  background: var(--bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 15vh;
+  width: 25vw;
+  flex-direction: column;
+  text-align: center;
+  border: 1px solid var(--fg);
+}
+button[onclick="closePop()"] {
+  color: var(--wr);
+  border: 1px solid var(--wr);
+}
+
+.settings {
+  position: fixed;
+  top: 5vh;
+  right: 2.5vw;
+  height: 5vh;
+  width: 5vh;
+  cursor: pointer;
+  z-index: 3;
+  display: default;
+}
+.hide {
+  display: none;
+}
+.cog {
+  fill: var(--fg);
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.cog svg {
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+}
+.popup2 {
+  position: fixed;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3vh);
+}
+
+.x {
+  height: 3vw;
+  width: 10vw;
+  border: 1px solid var(--wr);
+  padding: 1vh;
+  cursor: pointer;
+  top: 2vw;
+  right: 5vw;
+  font-size: 2vw;
+  position: fixed;
+  z-index: 034069864389634896499439649;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nodisp {
+  position: fixed;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(3vh);
+}
+.cont {
+  width: 30vw;
+  height: 70vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: var(--bg);
+  border: var(--fg) solid 2px;
+  border-radius: 5px;
+}
+
+.cont h1 {
+  margin-bottom: 2vh;
+}
+.ringerz {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 55vh;
+  width: 100%;
+  flex-direction: column;
+}
+.ringtone {
+  height: 10vh;
+  width: 90%;
+  border: 1px solid var(--md);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  cursor: pointer;
+}
+.europapa p {
+  background: -webkit-linear-gradient(
+    180deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.europapa {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-width: 1px;
+  border-image-source: linear-gradient(
+    45deg,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet,
+    red
+  );
+}
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template: "1fr 1fr" 10vh "1fr 1fr" 10vh "1fr 1fr" 10vh;
+  grid-gap: 2vh;
+}
+.option {
+  height: 10vh;
+  width: 10vw;
+  border: var(--md) solid 1px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+}
+.white {
+  background: #fff;
+}
+.black {
+  background: #040404;
+}
+.blue {
+  background: #023e8a;
+}
+.red {
+  background: #8a0202;
+}
+.green {
+  background: #028a02;
+}
+.orange {
+  background: #ff5c00;
+}
+.yellow {
+  background: #fff200;
+}
+.purple {
+  background: #55028a;
+}
+.lato {
+  font-family: "Lato", sans-serif;
+}
+.serif {
+  font-family: "Noto Serif", serif;
+}
+.monospaced {
+  font-family: "Roboto Mono", monospace;
+}
+.raleway {
+  font-family: "Raleway", sans-serif;
+}
+.pacifico {
+  font-family: "Pacifico", sans-serif;
+}
+.nabla {
+  font-family: "Nabla", sans-serif;
+}
+.pirataone {
+  font-family: "Pirata OnE", sans-serif;
+}
+.alumnisanspinstripe {
+  font-family: "Alumni Sans Pinstripe", sans-serif;
+}
