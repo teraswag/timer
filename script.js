@@ -18,6 +18,7 @@ function startTimer() {
   const qfinalTime =
     str_pad_left(qminutes, "0", 2) + ":" + str_pad_left(qseconds, "0", 2);
   document.querySelector(".timer").innerHTML = qfinalTime;
+  document.title = qfinalTime;
   interval = setInterval(function () {
     tim -= 1;
     const minutes = Math.floor(tim / 60);
@@ -25,6 +26,7 @@ function startTimer() {
     const finalTime =
       str_pad_left(minutes, "0", 2) + ":" + str_pad_left(seconds, "0", 2);
     document.querySelector(".timer").innerHTML = finalTime;
+    document.title = finalTime;
     if (tim <= 0) {
       clearInterval(interval);
       document.querySelector(".popup").style.display = "flex";
